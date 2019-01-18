@@ -18,6 +18,16 @@ func Point(x, y, z float64) Tuple {
 	}
 }
 
+// Vector returns a Tuple representing a vector at x, y, z
+func Vector(x, y, z float64) Tuple {
+	return Tuple{
+		x: x,
+		y: y,
+		z: z,
+		w: 0,
+	}
+}
+
 func (t Tuple) isVector() bool {
 	return t.w == 0
 }

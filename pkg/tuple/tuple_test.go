@@ -23,5 +23,10 @@ func TestTuple_isPoint(t *testing.T) {
 
 func TestTuple_new_Point(t *testing.T) {
 	t1 := Point(4, -4, 3)
-	assert.True(t, t1.isPoint(), "Tuple.Point creates a point")
+	assert.True(t, t1.isPoint(), "Point creates a point")
+}
+
+func TestTuple_new_Vector(t *testing.T) {
+	t1 := Vector(4, -4, 3)
+	assert.True(t, t1.isVector(), "Vector creates a vector")
 }
