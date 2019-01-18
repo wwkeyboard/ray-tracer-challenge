@@ -21,6 +21,25 @@ func TestTuple_isPoint(t *testing.T) {
 	assert.Equal(t, t1.isVector(), true, "t1 is now a vector")
 }
 
+func TestTuple_Equals(t *testing.T) {
+	t1 := Tuple{
+		x: 1,
+		y: 2,
+		z: 3,
+		w: 0,
+	}
+	t2 := Tuple{
+		x: 0.999999999,
+		y: 2.000000001,
+		z: 3.000000000,
+		w: 0,
+	}
+	assert.True(t, Equal(t1, t2), "Tuple equal handles weird floats")
+
+	t2.x = t2.x - FLOAT_PRECISION
+	assert.False(t, Equal(t1, t2), "Tuple not equal handles weird floats")
+}
+
 func TestTuple_new_Point(t *testing.T) {
 	t1 := Point(4, -4, 3)
 	assert.True(t, t1.isPoint(), "Point creates a point")
