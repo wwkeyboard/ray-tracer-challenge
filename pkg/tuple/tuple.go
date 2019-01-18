@@ -8,6 +8,16 @@ type Tuple struct {
 	w float64
 }
 
+// Point returns a Tuple representing a point at x, y, z
+func Point(x, y, z float64) Tuple {
+	return Tuple{
+		x: x,
+		y: y,
+		z: z,
+		w: 1,
+	}
+}
+
 func (t Tuple) isVector() bool {
 	return t.w == 0
 }
