@@ -49,3 +49,11 @@ func TestTuple_new_Vector(t *testing.T) {
 	t1 := Vector(4, -4, 3)
 	assert.True(t, t1.isVector(), "Vector creates a vector")
 }
+
+func TestTuple_Add(t *testing.T) {
+	t1 := Vector(3, -2, 5)
+	t2 := Point(-2, 3, 1)
+	result := Point(1, 1, 6)
+
+	assert.Equal(t, t1.Add(t2), result, "adding tuples")
+}

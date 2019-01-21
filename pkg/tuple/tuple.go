@@ -51,3 +51,13 @@ func (t Tuple) isVector() bool {
 func (t Tuple) isPoint() bool {
 	return t.w == 1
 }
+
+// Add returns a new Tuple that is the result of adding t2 to t1
+func (t Tuple) Add(t2 Tuple) Tuple {
+	return Tuple{
+		x: t.x + t2.x,
+		y: t.y + t2.y,
+		z: t.z + t2.z,
+		w: t.w + t2.w,
+	}
+}
